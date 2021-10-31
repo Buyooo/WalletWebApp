@@ -10,4 +10,8 @@
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="client-app\" />
+  </ItemGroup>
+
 </Project>
