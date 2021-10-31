@@ -13,6 +13,7 @@
 
 	<ItemGroup>
 		<Folder Include="client-app\" />
+		<Folder Include="Data\" />
 	</ItemGroup>
 
 	<ItemGroup>
