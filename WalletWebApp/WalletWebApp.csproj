@@ -13,7 +13,6 @@
 
 	<ItemGroup>
 		<Folder Include="client-app\" />
-		<Folder Include="Data\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -32,6 +31,10 @@
 		<Content Remove="$(SpaRoot)**" />
 		<None Remove="$(SpaRoot)**" />
 		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Wallet.Library\Wallet.Library.csproj" />
 	</ItemGroup>
 
 	<!--
