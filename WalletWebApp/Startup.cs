@@ -20,6 +20,8 @@ namespace WalletWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+
             services.AddDbContext<WalletContext>();
 
             services.AddSpaStaticFiles(configuration =>
@@ -44,6 +46,11 @@ namespace WalletWebApp
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
             app.UseSpa(spa =>
             {

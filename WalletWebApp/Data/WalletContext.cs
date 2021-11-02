@@ -11,13 +11,17 @@ namespace WalletWebApp.Data
         : base(options)
         {
             Configuration = configuration;
+            Database.Migrate();
         }
 
         public IConfiguration Configuration { get; }
 
         public DbSet<Account> Accounts { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={Configuration.GetConnectionString($"{Directory.GetCurrentDirectory()}WalletDatabase")}");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = $"Data Source={ Directory.GetCurrentDirectory() }{ Configuration.GetConnectionString("WalletDatabase")}";
+            optionsBuilder.UseSqlite(connectionString);
+        }
     }
 }
