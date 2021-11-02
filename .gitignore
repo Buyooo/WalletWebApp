@@ -349,3 +349,5 @@ healthchecksdb
 MigrationBackup/
 
 WalletWebApp/package-lock.json
+
+*.db-journal
