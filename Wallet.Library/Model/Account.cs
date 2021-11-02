@@ -1,10 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wallet.Library.Model
 {
     public class Account
     {
-        public Guid Id { get; set; }
+        // I'd like to use Guid but it's not completly supported by SQLite
+        // so I'm going to add Guids as string
+        [Key]
+        public string Id { get; set; }
 
         public int Balance { get; set; }
     }
